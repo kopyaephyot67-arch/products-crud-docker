@@ -1,80 +1,34 @@
-# ------------------------------------------------------------------
-# 1. DEPENDENCIES / BUILD OUTPUT
-# ------------------------------------------------------------------
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-# Node Dependencies (Global)
-node_modules/
-npm-debug.log*
-yarn-error.log
+# Testing
+/coverage
 
-# Node Dependencies (Per Service)
-# This ignores node_modules in your API and Frontend folders if they exist
-01_api/node_modules/
-02_frontend/node_modules/
+# Next.js
+/.next/
+/out/
 
-# Next.js Build Output (Frontend)
-.next/
-out/
-02_frontend/.next/
-02_frontend/out/
+# Production
+/build
 
-# TypeScript Cache
-*.tsbuildinfo
-
-# ------------------------------------------------------------------
-# 2. ENVIRONMENT & SECRETS
-# ------------------------------------------------------------------
-
-# Environment Files (MUST be ignored for security)
+# Environment
 .env
-.env.*
-.env.local
-.env.development.local
-.env.production.local
+.env*.local
+!.env.example
 
-# ------------------------------------------------------------------
-# 3. DATABASE / PRISMA
-# ------------------------------------------------------------------
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Prisma Client output directory (default: node_modules/.prisma)
-# Already covered by node_modules but good to be explicit
-# Local SQLite/Postgres data files
-*.db
-*.sqlite
-*.sqlite3
-
-# Prisma Migration Files (Ignore migration files, keep the folder)
-01_api/prisma/migrations/*
-
-# ------------------------------------------------------------------
-# 4. UPLOADS / USER GENERATED CONTENT
-# ------------------------------------------------------------------
-
-# Ignore all uploads but keep the folder tracked (using .gitkeep)
-01_api/uploads/*
-!01_api/uploads/.gitkeep
-
-# ------------------------------------------------------------------
-# 5. DOCKER
-# ------------------------------------------------------------------
-
-# Ignore local overrides that contain credentials or secrets
-docker-compose.override.yml
-# Ignore local Docker build context cache
-.dockerignore
-
-# ------------------------------------------------------------------
-# 6. IDE / OS Files
-# ------------------------------------------------------------------
-
-# IDE Files (VSCode, IntelliJ)
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS Files
+# OS
 .DS_Store
-Thumbs.db
-*.log
-logs/
+*.pem
+
+# Vercel
+.vercel
+
+# Turbo
+.turbo
